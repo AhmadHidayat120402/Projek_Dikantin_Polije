@@ -37,12 +37,13 @@
         <div class="leftside-menu">
             <!-- LOGO -->
             <a href="index.html" class="logo text-center logo-light">
-                <span class="logo-lg">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="" height="16">
+                <span class="logo-lg" style="background-color: white">
+                    <img src="{{ asset('/img/logo-Dikantin.png') }}" alt="" height="80">
                 </span>
                 <span class="logo-sm">
                     <img src="{{ asset('assets/images/logo_sm.png') }}" alt="" height="16">
                 </span>
+
             </a>
             <div class="h-100" id="leftside-menu-container" data-simplebar="" style="background-color: #51AADD">
 
@@ -74,8 +75,9 @@
                         </a>
                         <div class="collapse" id="sidebarEcommerce">
                             <ul class="side-nav-second-level text-white">
+
                                 <li>
-                                    <a href="/waitinglist" class="text-white">Waiting List</a>
+                                    <a href="{{ url('api/allData') }}" class="text-white">Waiting List</a>
                                 </li>
                                 <li>
                                     <a href="/success" class="text-white">Success</a>

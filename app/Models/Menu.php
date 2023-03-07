@@ -14,7 +14,13 @@ class Menu extends Model
         'kantins'
     ];
 
-    public function kantins(){
+    public function kantins()
+    {
         return $this->belongsTo(Kantin::class, 'id_kantin', 'id');
     }
+
+    // public function kantins()
+    // {
+    //     return $this->belongsTo('App\Kantin');
+    // }
 }

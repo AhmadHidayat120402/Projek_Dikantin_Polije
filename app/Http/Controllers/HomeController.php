@@ -23,13 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view(
-            'main',
-            [
-                'title' => 'Admin'
-            ]
-        );
+        return view('main', [
+            ' title' => 'Admin'
+        ]);
+        // return view(
+        //     'main',
+        //     [
+        //         'title' => 'Admin'
+        //     ]
+        // );
     }
+
+    
 
     public function kantinHome()
     {
@@ -48,6 +53,6 @@ class HomeController extends Controller
 
     public function kasirHome()
     {
-        return view('kasirHome');
+        return view('kasirhome');
     }
 }

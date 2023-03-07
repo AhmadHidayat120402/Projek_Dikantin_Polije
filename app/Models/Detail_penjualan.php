@@ -14,11 +14,6 @@ class Detail_penjualan extends Model
         'menus', 'kantins'
     ];
 
-    public function penjualans()
-    {
-        return $this->belongsTo(Penjualan::class, 'id_penjualan', 'id');
-    }
-
     public function kantins()
     {
         return $this->belongsTo(Kantin::class, 'id_kantin', 'id');

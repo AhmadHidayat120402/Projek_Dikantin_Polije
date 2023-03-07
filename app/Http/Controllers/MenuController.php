@@ -13,6 +13,13 @@ class MenuController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function pusher()
+    {
+        return view('pusher');
+
+    }
+
     public function index()
     {
         $menu = Menu::all();

@@ -6,11 +6,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\searchController;
 use App\Http\Controllers\SuccesController;
 use App\Http\Controllers\WaitingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\RegisterAppController;
+use App\Events\sendGlobalNotification;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +52,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/main', [HomeController::class, 'index'])->name('main');
     // Route::get('/kantin/home', [HomeController::class, 'kantinHome'])->name('kantin.home');
@@ -70,8 +75,16 @@ Route::middleware(['auth', 'user-access:dharmawanita'])->group(function () {
 });
 
 Route::middleware(['auth', 'user-access:kasir'])->group(function () {
-    Route::get('/kasir/home', [HomeController::class, 'kasirHome'])->name('kasir.home');
+    Route::get('/kasir/home', [HomeController::class, 'index'])->name('kasir.home');
 });
+
+
+// Route::get('/pusher', [MenuController::class, 'pusher']);
+Route::get('send-notif/{name}', function ($name) {
+    // event(new sendGlobalNotification($name));
+    return  event(new sendGlobalNotification($name));
+});
+
 
 Route::get('/menu', [MenuController::class, 'index'])->name('menuAll');
 Route::get('/menu/create', [MenuController::class, 'create']);
@@ -97,6 +110,9 @@ Route::delete('/customer/{id}', [CustomerController::class, 'destroy']);
 
 Route::get('/user', [RegisterAppController::class, 'index']);
 Route::post('/user', [RegisterAppController::class, 'store']);
+Route::get('/search', [searchController::class, 'index'])->name('search');
+
+
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

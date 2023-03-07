@@ -1,22 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CustomerApiController extends Controller
+class searchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index($id)
+    public function index(Request $request)
     {
-        $customer = Customer::where('id_customer', $id)->get();
-        return response($customer);
+        if($request->has('q')){
+            $q = $request->q;
+            $data = Customer::where('id_customer','LIKE', '%' . $q . '%')->get();
+
+            return response()->json($data);
+        }
     }
 
     /**
@@ -65,22 +68,5 @@ class CustomerApiController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    // membuat fungsi untuk mengambil data customer berdasarkan id_customer
-    public function showByIdCustomer(Request $req)
-    {
-        $id_customer = $req->id_customer;
-
-        // cek kalo ada request id_customer maka dia nampilin berdasarkan id tersebut
-        if ($id_customer) {
-            $customer = Customer::where('id_customer', $id_customer)->first();
-            return [
-                'success' => true,
-                'data' => $customer
-            ];
-        } else {
-            return ['success' => false];
-        }
     }
 }

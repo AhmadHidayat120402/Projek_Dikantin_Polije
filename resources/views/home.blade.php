@@ -157,31 +157,31 @@
             <i class="bi bi-list"></i>
         </button>
         <!-- Example single danger button -->
-        {{-- <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    {{ Auth::user()->name }}
-                </button>
-                <ul class="dropdown-menu">
-                    <li> <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
-            </div>
-        </div> --}}
-
-        <div class="card mt-2" style="border: none; outline: none;background: #D0E3ED;">
-            <div class="card-body" style="border: none; outline: none;">
-                @yield('content')
-            </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ Auth::user()->name }}
+            </button>
+            <ul class="dropdown-menu">
+                <li> <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
         </div>
+    </div>
+
+    <div class="card mt-2" style="border: none; outline: none;background: #D0E3ED;">
+        <div class="card-body" style="border: none; outline: none;">
+            @yield('content')
+        </div>
+    </div>
     </div>
 
     <script>

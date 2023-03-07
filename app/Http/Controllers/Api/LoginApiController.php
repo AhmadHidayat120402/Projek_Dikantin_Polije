@@ -22,7 +22,7 @@ class LoginApiController extends Controller
             $user->api_token = Str::random(100);
             // $user->save();
             // $user->makeVisible('api_token');
-
+            
             return response()->json([
                 'response_code' => 200,
                 'message' => 'Login Berhasil',

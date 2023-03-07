@@ -3,8 +3,6 @@
     border: none;
     outline: none;
 }
-
-.number-meja
-{
-    width: 50%;
+.no_meja {
+    width: 50% !important;
 }

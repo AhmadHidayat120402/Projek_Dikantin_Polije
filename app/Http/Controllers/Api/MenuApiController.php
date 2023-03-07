@@ -44,15 +44,16 @@ class MenuApiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $menu = Menu::find($id);
+        return response()->json(['message' => 'success', 'data' => $menu]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request, $id)
     {
-        //
+
     }
 
     /**
