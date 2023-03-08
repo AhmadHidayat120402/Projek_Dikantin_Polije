@@ -1,13 +1,15 @@
 <?php
 
 // use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AndroidMenu;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\Api\MenuApiController;
-use App\Http\Controllers\Api\LoginApiController;
 use App\Http\Controllers\Api\CustomerApiController;
 use App\Http\Controllers\DetailPenjualanController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,13 @@ use Illuminate\Support\Facades\Auth;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::post('/login', [LoginApiController::class, 'index']);
+// Route::post('/login', [LoginApiController::class, 'index']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/apimenu', [
+    AndroidMenu::class,
+    'apimenu'
+]);
 
 Route::get('/menus', [MenuApiController::class, 'index']);
 Route::post('/menus', [MenuApiController::class, 'store']);

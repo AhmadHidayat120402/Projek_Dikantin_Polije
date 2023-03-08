@@ -332,9 +332,9 @@
                                 </span>
                                 <span>
                                     <span class="account-user-name">
-                                        {{ Auth::user()->name }}
+                                        {{ auth()->user()->name }}
                                     </span>
-                                    <span class="account-position">{{ Auth::user()->type }}</span>
+                                    <span class="account-position">{{ auth()->user()->email }}</span>
                                 </span>
                             </a>
                             <div
@@ -361,13 +361,11 @@
                                     <i class="mdi mdi-lifebuoy me-1"></i>
                                     <span>Support</span>
                                 </a>
-
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-lock-outline me-1"></i>
                                     <span>Lock Screen</span>
                                 </a>
-
                                 <!-- item-->
                                 <a class="dropdown-item notify-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
