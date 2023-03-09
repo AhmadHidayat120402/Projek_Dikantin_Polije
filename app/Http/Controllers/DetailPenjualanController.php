@@ -15,10 +15,16 @@ class DetailPenjualanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function get_all_order()
+    // public function get_all_order()
+    // {
+    //     $data = detail_penjualan::all();
+    //     return view('dashboard.order.waiting', compact('data'));
+    // }
+
+    public function delete_order($id)
     {
-        $data = detail_penjualan::all();
-        return view('dashboard.order.waiting', compact('data'));
+        detail_penjualan::findOrFail($id)->delete();
+        return redirect()->back();
     }
 
     // public function get_pusher()

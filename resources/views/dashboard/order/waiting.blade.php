@@ -12,7 +12,6 @@
                         <th>No</th>
                         <th>Tanggal</th>
                         <th>ID Penjualan</th>
-                        <th>ID Kantin</th>
                         <th>ID Menu</th>
                         <th>Jumlah</th>
                         <th>Harga</th>
@@ -27,7 +26,6 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $d->tanggal_penjualan }}</td>
                             <td>{{ $d->id_penjualan }}</td>
-                            <td>{{ $d->id_kantin }}</td>
                             <td>{{ $d->id_menu }}</td>
                             <td>{{ $d->jumlah }}</td>
                             <td>{{ $d->harga }}</td>
@@ -35,9 +33,9 @@
                             <td>{{ $d->status }}</td>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                                    {{-- <a href="/menu/{{ $d->id }}/edit"
-                                        class="btn btn-warning text-white btn-sm">Edit</a> --}}
-                                    <form action="/menu/{{ $d->id }}" method="post">
+                                    <a href="{{ url('/allOrderPembeli') }}"
+                                        class="btn btn-warning text-white btn-sm">Detail</a>
+                                    <form action="/api/allOrder/{{ $d->id }}" method="post">
                                         @method('DELETE')
                                         @csrf
                                         <button class="btn btn-danger btn-sm" type="submit"

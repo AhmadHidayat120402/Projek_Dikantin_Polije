@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('detail_penjualans', function (Blueprint $table) {
-            $table->enum('status',['proses','selesai'])->default('proses')->after('diskon');
+            $table->enum('status', ['proses', 'selesai'])->default('proses')->after('diskon');
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */

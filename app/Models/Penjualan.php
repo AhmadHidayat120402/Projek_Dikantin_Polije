@@ -12,7 +12,7 @@ class Penjualan extends Model
     protected $guarded = ['id'];
 
     protected $with = [
-        'customers', 'kasirs', 'kantins'
+        'customers', 'kasirs', 'kantins','details'
     ];
 
     public function customers()
@@ -29,8 +29,8 @@ class Penjualan extends Model
         return $this->belongsTo(User::class, 'id_kasir', 'id');
     }
 
-    // public function details()
-    // {
-    //     return $this->hasMany(Detail_penjualan::class, 'id_penjualan');
-    // }
+    public function details()
+    {
+        return $this->hasMany(Detail_penjualan::class, 'id_penjualan');
+    }
 }

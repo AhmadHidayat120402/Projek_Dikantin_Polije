@@ -2,6 +2,7 @@
 
 // use Illuminate\Http\Request;
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AndroidMenu;
@@ -28,17 +29,15 @@ use App\Http\Controllers\DetailPenjualanController;
 // Route::post('/login', [LoginApiController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
-Route::post('/apimenu', [
-    AndroidMenu::class,
-    'apimenu'
-]);
+Route::post('/apimenu', [AndroidMenu::class, 'apimenu']);
+Route::post('/api-penjualan', [AndroidMenu::class, 'api_penjualan']);
 
 Route::get('/menus', [MenuApiController::class, 'index']);
 Route::post('/menus', [MenuApiController::class, 'store']);
 Route::get('/menus/{id}', [MenuApiController::class, 'show']);
 Route::put('/menus/{id}', [MenuApiController::class, 'update']);
 Route::delete('/menus/{id}', [MenuApiController::class, 'destroy']);
-Route::get('/allDataa', [PenjualanController::class, 'allDataa']);
+// Route::get('/allDataa', [PenjualanController::class, 'allDataa']);
 
 // Route::get('/customer', [CustomerApiController::class, 'index']);
 
@@ -46,9 +45,10 @@ Route::get('/allDataa', [PenjualanController::class, 'allDataa']);
 
 
 Route::get('/allData', [PenjualanController::class, 'allData']);
-Route::get('/allOrder', [DetailPenjualanController::class, 'get_all_order']);
 
 
+// Route::get('/allOrder', [DetailPenjualanController::class, 'get_all_order']);
+// Route::delete('/allOrder/{id}', [DetailPenjualanController::class, 'delete_order']);
 // Route::get('/waiting-list', [PenjualanController::class, 'allData']);
 Route::post('/penjualan/save', [PenjualanController::class, 'store'])->name('penjualan.save');
 Route::post('/penjualan/tambahJumlah', [PenjualanController::class, 'tambahJumlah'])->name('penjualan.tambahJumlah');

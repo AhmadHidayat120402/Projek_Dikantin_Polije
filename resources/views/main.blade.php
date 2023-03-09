@@ -78,7 +78,7 @@
                             <ul class="side-nav-second-level text-white">
 
                                 <li>
-                                    <a href="{{ url('api/allOrder') }}" class="text-white">Waiting List</a>
+                                    <a href="{{ url('/allOrder') }}" class="text-white">Waiting List</a>
                                 </li>
                                 <li>
                                     <a href="/success" class="text-white">Success</a>
@@ -332,10 +332,10 @@
                                         class="rounded-circle">
                                 </span>
                                 <span>
-                                    {{-- <span class="account-user-name">
+                                    <span class="account-user-name">
                                         {{ auth()->user()->name }}
                                     </span>
-                                    <span class="account-position">{{ auth()->user()->email }}</span> --}}
+                                    <span class="account-position">{{ auth()->user()->email }}</span>
                                 </span>
                             </a>
                             <div
