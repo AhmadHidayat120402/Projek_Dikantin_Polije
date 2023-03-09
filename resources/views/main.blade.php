@@ -39,14 +39,14 @@
             <!-- LOGO -->
             <a href="index.html" class="logo text-center logo-light">
                 <span class="logo-lg" style="background-color: white">
-                    <img src="{{ asset('/img/logo-Dikantin.png') }}" alt="" height="80">
+                    <img src="{{ asset('/img/logo-baru1.png') }}" alt="" width="150">
                 </span>
-                <span class="logo-sm">
-                    <img src="{{ asset('assets/images/logo_sm.png') }}" alt="" height="16">
+                <span class="logo-sm" style="background-color: white">
+                    <img src="{{ asset('img/logo-kotak.png') }}" alt="" width="63">
                 </span>
 
             </a>
-            <div class="h-100" id="leftside-menu-container" data-simplebar="" style="background-color: #51AADD">
+            <div class="sidebar text-white h-100" id="leftside-menu-container" data-simplebar="" style="background-color: #51AADD">
 
                 <!--- Sidemenu -->
                 <ul class="side-nav">
@@ -55,13 +55,14 @@
 
                     <li class="side-nav-item ">
                         <a data-bs-toggle="collapse" href="/dashboard" aria-expanded="false"
-                            aria-controls="sidebarDashboards" class="side-nav-link text-white">
+                            aria-controls="sidebarDashboards" class="side-nav-link text-white fw-bold">
                             <i class="uil-home-alt"></i>
-                            <span> Dashboards </span>
+                            <span> Dashboard </span>
                         </a>
                     </li>
-                    <li class="side-nav-item">
-                        <a href="/kasir" class="side-nav-link text-white">
+                    
+                    <li class="side-nav-item text-white">
+                        <a href="/kasir" class="side-nav-link text-white fw-bold">
                             <i class="uil-calender"></i>
                             <span> Kasir </span>
                         </a>
@@ -69,7 +70,7 @@
 
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false"
-                            aria-controls="sidebarEcommerce" class="side-nav-link text-white">
+                            aria-controls="sidebarEcommerce" class="side-nav-link text-white fw-bold">
                             <i class="uil-store"></i>
                             <span> Order</span>
                             <span class="menu-arrow"></span>
@@ -78,10 +79,10 @@
                             <ul class="side-nav-second-level text-white">
 
                                 <li>
-                                    <a href="{{ url('/allOrder') }}" class="text-white">Waiting List</a>
+                                    <a href="{{ url('/allOrder') }}" class="text-white fw-semibold">Waiting List</a>
                                 </li>
                                 <li>
-                                    <a href="/success" class="text-white">Success</a>
+                                    <a href="/success" class="text-white fw-semibold">Success</a>
                                 </li>
                             </ul>
                         </div>
@@ -89,7 +90,7 @@
 
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
-                            aria-controls="sidebarEmail" class="side-nav-link text-white">
+                            aria-controls="sidebarEmail" class="side-nav-link text-white fw-bold">
                             <i class="uil-envelope"></i>
                             <span> Data </span>
                             <span class="menu-arrow"></span>
@@ -97,29 +98,29 @@
                         <div class="collapse" id="sidebarEmail">
                             <ul class="side-nav-second-level text-white">
                                 <li>
-                                    <a href="/menu" class="text-white">Menu</a>
+                                    <a href="/menu" class="text-white fw-semibold">Menu</a>
                                 </li>
                                 <li>
-                                    <a href="/customer" class="text-white">Customer</a>
+                                    <a href="/customer" class="text-white fw-semibold">Customer</a>
                                 </li>
                                 <li>
-                                    <a href="/penjualan" class="text-white">Penjualan</a>
+                                    <a href="/penjualan" class="text-white fw-semibold">Penjualan</a>
                                 </li>
                                 <li>
-                                    <a href="/detailpenjualan" class="text-white">Detail Penjualan</a>
+                                    <a href="/detailpenjualan" class="text-white fw-semibold">Detail Penjualan</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="side-nav-title side-nav-item text-white">User Access</li>
                     <li class="side-nav-item">
-                        <a href="/user" class="side-nav-link text-white">
+                        <a href="/user" class="side-nav-link text-white fw-bold">
                             <i class="uil-comments-alt"></i>
                             <span> Add User </span>
                         </a>
                     </li>
-                    <li class="side-nav-item">
-                        <a class="side-nav-link text-white" href="{{ route('logout') }}"
+                    <li class="side-nav-item text-red">
+                        <a class="side-nav-link fw-bold text-red" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             <i class="mdi mdi-logout me-1"></i>

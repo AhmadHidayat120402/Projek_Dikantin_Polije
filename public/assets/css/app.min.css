@@ -3545,8 +3545,8 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #727cf5;
-  border-color: #727cf5
+  background-color: #51AADD;
+  border-color: #51AADD
 }
 
 .btn-primary:hover {
@@ -9090,6 +9090,10 @@ fieldset:disabled .btn {
   font-weight: 400 !important
 }
 
+.fw-semibold {
+  font-weight: 650 !important
+}
+
 .fw-bold {
   font-weight: 700 !important
 }
@@ -9197,6 +9201,18 @@ fieldset:disabled .btn {
 
 .text-white {
   color: #fff !important
+}
+
+.text-white :hover {
+  color: #514D4E !important
+}
+
+.text-red {
+  color: #fff !important
+}
+
+.text-red :hover {
+  color: #eb3439 !important
 }
 
 .text-body {
@@ -13866,6 +13882,49 @@ body {
   box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15)
 }
 
+.sidebar {
+  background: #51AADD;
+}
+
+.sidebar li {
+  /* padding: 5px 2px; */
+  /* height: 35px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  /* color: white; */
+}
+
+/* for background hover */
+.sidebar li:hover {
+  background: #9DD0ED;
+  /* color: black; */
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* for color text default */
+.sidebar li a {
+  display: block;
+  align-items: center;
+  /* color: white; */
+  margin-left: 0px;
+  transition: none !important;
+  padding: 5px 10px;
+}
+
+/* for color text after hover */
+.sidebar li:hover a {
+  /* color: black; */
+  text-decoration: none;
+  /* padding-left: 10px; */
+  margin-left: 0;
+}
+
+li.active {
+  color: red;
+}
+
 .side-nav {
   padding-left: 0;
   list-style-type: none
@@ -15053,7 +15112,7 @@ body[data-layout-mode=boxed][data-layout=topnav] .navbar-custom {
 }
 
 .end-bar .rightbar-title {
-  background-color: #313a46;
+  background-color: #51AADD;
   padding: 27px 25px;
   color: #fff
 }

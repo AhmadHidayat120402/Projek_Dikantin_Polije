@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid mt-2">
         <a href="/customer/create" class="btn text-white" style="padding: 7px; border-radius:10px; background: #51AADD"> +
-            Create new customer
+            Create New Customer
         </a>
         {{-- <button class="btn text-white" style="background: #51AADD" onClick="create()">+ create new customer</button> --}}
         {{-- <div id="read" class="mt-3"></div> --}}

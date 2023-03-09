@@ -25,19 +25,36 @@
     <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+    <style>
+        /* tambahkan gaya CSS di sini */
+        .card-header {
+            background-color: #2196F3;
+            color: #ffffff;
+        }
+
+        .input-field .in{
+            width: 200px;
+            border-radius: 30px;
+            color: #ffffff;
+            background: rgba(255,255,255,0.1);
+            /* justify-content: center; */
+            align-items: center !important;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> -->
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                    {{ 'Dikantin' }}
-                </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -90,7 +107,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        <!-- </nav> -->
 
         <main class="py-4">
             @yield('content')

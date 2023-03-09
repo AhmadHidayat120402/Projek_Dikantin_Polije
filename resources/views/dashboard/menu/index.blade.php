@@ -1,10 +1,10 @@
 @extends('main')
 @section('content')
-    <div class="container-fluid mt-2">
+    <div class="container-fluid mt-3">
         <a href="/menu/create" class="btn text-white" style="padding: 7px; border-radius:10px; background: #51AADD">
-            + create new menu
+            + Create New Menu
         </a>
-        <div class="table-responsive mt-3 bg-white p-4" style="border-radius: 20px; height:76% !important;">
+        <div class="table-responsive mt-2 bg-white p-4" style="border-radius: 20px; height:76% !important;">
             <table class="table table-striped table-hover w-100 nowrap" width="100%" id="table-menu"
                 style="height: 10% !important">
                 <thead>
@@ -18,7 +18,7 @@
                         <th>Foto</th>
                         <th>Stok</th>
                         <th>Kantin</th>
-                        <th>action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

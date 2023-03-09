@@ -1,3 +1,53 @@
+body{
+    background-image: url("/img/bac-login.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+}
+
+/* .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+} */
+.content1 {
+    background-color: transparent;
+}
+/* .card{
+    justify-content: center;
+    display: flex;
+    background-color: transparent;
+    border: none;
+} */
+
+.card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body{
+    /* width: 350px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: transparent !important;
+    /* flex-direction: column; */
+    /* padding: 0 15px 0 15px; */
+    
+}
+
+.input-field .in .input{
+    width: 200px;
+    border-radius: 30px;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    /* justify-content: center; */
+    align-items: center !important;
+}
 .input-bayar {
     width: 50%;
     border: none;
@@ -5,4 +55,30 @@
 }
 .no_meja {
     width: 50% !important;
+}
+
+h5 {
+    text-align: center;
+}
+
+h5 span {
+    display: none; /* menyembunyikan elemen span */
+  }
+
+.btn-simpan {
+    background-color: #51AADD;
+    border-radius: 10px;
+}
+
+.btn-simpan:hover {
+    background-color: #4d5dda;
+}
+
+.btn-clearall {
+    background-color: #FF4A4F;
+    border-radius: 10px;
+}
+
+.btn-clearall:hover {
+    background-color: #c52f34;
 }

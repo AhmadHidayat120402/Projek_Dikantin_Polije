@@ -61,11 +61,11 @@
                     @endforeach --}}
                 </div>
             </div>
-            <div class="col-md-4 mt-2 pt-2" style="background: white; border-radius:10px;">
+            <div class="col-md-4 mt-2 pb-2 pt-2" style="background: white; border-radius:10px;">
                 <div class="row">
                     <div class="col-md-12 ">
                         <div class="d-flex justify-content-between">
-                            <h5 class="fw-bold d-inline m-0">Order <span hidden id="orderid"></span></h5>
+                            <h5 class="text-left fw-bold d-inline m-0">ORDER <span hidden id="orderid"></span></h5>
                             <p class="m-0">{{ date('Y-m-d') }}</p>
                             {{-- <hr style="height: 2px"> --}}
                         </div>
@@ -78,15 +78,16 @@
                                 </div>
                                 <div class="col-5">
                                     <div class="d-flex align-items-center justify-content-end gap-3">
-                                        <p class="m-0">1x</p>
+                                        <p class="m-0">x1</p>
                                         <input type="number" class="form-control border-0 bg-white" placeholder="0%"
                                             required>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="d-flex align-items-center justify-content-end gap-1">
+                                    <button type="button" class="btn btn-light" style="border: 20px;">-</button>
                                         <button type="button" class="btn btn-light" style="border: 20px;">+</button>
-                                        <button type="button" class="btn btn-light" style="border: 20px;">-</button>
+                                        
                                         <button type="button" class="btn btn-danger" id="btn_hapus" style="border: 20px;">
                                             <i class="fa-solid fa-trash-can text-white"></i>
                                         </button>
@@ -150,13 +151,12 @@
                                     class="form-control input-bayar text-black bg-white" readonly placeholder="Rp.0">
                             </div>
                         </div>
-                        <button type="submit" class="btn form-control text-white fw-bold" id="btn_save"
-                            style="background: #51AADD; border-radius:10px" onclick="simpanAll()">Simpan</button>
+                        <button type="submit" class="btn btn-simpan form-control text-white fw-bold" id="btn_save"
+                            " onclick="simpanAll()">Simpan</button>
                         <a href="javascript:void(0);" id="linkhapussemua"
-                            class="btn form-control mt-2  relative mt-0 text-white fw-bold" id="btn_clearAll"
+                            class="btn btn-clearall form-control mt-2  relative mt-0 text-white fw-bold" id="btn_clearAll"
                             onclick="location.reload()"
-                            style="background: #FF4A4F; border-radius:10px
-                            ">Clear
+                            >Clear
                             All</a>
                     </div>
                 </div>
@@ -276,14 +276,14 @@
                                 </div>
                                 <div class="col-5">
                                     <div class="d-flex align-items-center justify-content-end gap-3">
-                                        <p class="m-0"><span class="qty">1</span>x</p>
+                                        <p class="m-0">x<span class="qty">1</span></p>
                                         <input type="number" data-id="${id}" class="form-control border-0 bg-white" placeholder="0%" onchange="discountPerItem(this)">
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="d-flex align-items-center justify-content-end gap-1">
-                                        <button type="button" data-id="${id}" class="btn btn-light btn-tambah-qty" onclick="addQty(this)" style="border: 20px;">+</button>
                                         <button type="button" data-id="${id}" class="btn btn-light btn-kurang-qty" onclick="reduceQty(this)" style="border: 20px;">-</button>
+                                        <button type="button" data-id="${id}" class="btn btn-light btn-tambah-qty" onclick="addQty(this)" style="border: 20px;">+</button>
                                         <button type="button" data-id="${id}" class="btn btn-danger btn-hapus-cart" onclick="deleteCartItem(this)" id="btn_hapus" style="border: 20px;">
                                             <i class="fa-solid fa-trash-can text-white"></i>
                                         </button>
@@ -401,9 +401,9 @@
                     html = ''
                     response.data.forEach((item) => {
                         // console.log(data.item)
-                        html += `<div class="col-md-3 mt-2">
+                        html += `<div class="col-md-3 mt-2 pb-2">
                                     <div id="menu_luar" class="bungkus-menu bg-second bg-white" style="cursor: pointer; border-radius : 10px;" data-nama="${item.nama_menu}" data-harga="${item.harga}" data-id="${item.id}" onclick="showCart(this)">
-                                    <img src="storage/${item.foto}" alt="" width="80px"
+                                    <img src="public/storage/${item.foto}" alt="" width="80px"
                                         class="justify-content-center align-items-center mx-auto d-block p-2"
                                         id="menu_dalam">
                                     <p class="m-0 text-center text-primary fw-bold" id="harga_menu">Rp

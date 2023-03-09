@@ -1,6 +1,6 @@
 @extends('main')
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <form class="bg-white p-4" method="POST" action="/customer"  style="border-radius: 20px;">
             @csrf
             <div class="mb-3">
