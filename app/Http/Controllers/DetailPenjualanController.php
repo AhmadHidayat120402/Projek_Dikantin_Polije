@@ -14,8 +14,11 @@ class DetailPenjualanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function get_all_order()
     {
+        $data = detail_penjualan::all();
+        return view('dashboard.order.waiting', compact('data'));
     }
 
     // public function get_pusher()

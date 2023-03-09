@@ -44,9 +44,10 @@ Route::get('/allDataa', [PenjualanController::class, 'allDataa']);
 
 // ndek sini di route ini
 
-Route::middleware(['auth', 'user-access:kasir'])->group(function () {
-    Route::get('/allData', [PenjualanController::class, 'allData']);
-});
+
+Route::get('/allData', [PenjualanController::class, 'allData']);
+Route::get('/allOrder', [DetailPenjualanController::class, 'get_all_order']);
+
 
 // Route::get('/waiting-list', [PenjualanController::class, 'allData']);
 Route::post('/penjualan/save', [PenjualanController::class, 'store'])->name('penjualan.save');
@@ -56,6 +57,7 @@ Route::post('/penjualan/hapusItem', [PenjualanController::class, 'hapusItem'])->
 Route::get('/cart/{id}', [DetailPenjualanController::class, 'get_all'])->name('cart.all');
 Route::get('/pusher/{id}', [DetailPenjualanController::class, 'get_pusher']);
 Route::post('/cart/save', [DetailPenjualanController::class, 'store'])->name('cart.save');
+
 
 // semua route disini bisa diakses di postman tergantung kegunaaan, contoh disini buat route /customer/get-by-id-customer yg dia panggil controller dengan fungsi showByIdCustmer
 Route::get('/customer/get-by-id-customer', [CustomerApiController::class, 'showByIdCustomer']);

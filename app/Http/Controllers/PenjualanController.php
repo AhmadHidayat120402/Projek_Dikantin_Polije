@@ -27,44 +27,45 @@ class PenjualanController extends Controller
         //     ->select('users.name', 'orders.order_date')
         //     ->get();
 
-        // $data = Penjualan::all();
+        $data = Penjualan::all();
 
-        // foreach ($data as $key => $item) {
-        //     $builder = new Detail_penjualan();
+        foreach ($data as $key => $item) {
+            $builder = new Detail_penjualan();
 
-        //     $builder = $builder->where('id_penjualan', $item->id);
+            $builder = $builder->where('id_penjualan', $item->id);
 
-        //     if ($req->id_kantin) {
-        //         $builder = $builder->where('id_kantin', $req->id_kantin);
-        //     }
+            if ($req->id_kantin) {
+                $builder = $builder->where('id_kantin', $req->id_kantin);
+            }
 
-        //     if ($req->status) {
-        //         $builder = $builder->where('status', $req->status);
-        //     }
+            if ($req->status) {
+                $builder = $builder->where('status', $req->status);
+            }
 
-        //     $details = $builder->get();
+            $details = $builder->get();
 
-        //     $data[$key]->details = $details;
-        // }
+            $data[$key]->details = $details;
+        }
 
+        return response()->json($data);
         // dd($data);
-        $data = DB::table('penjualans')
-            ->leftJoin('customers', 'penjualans.id_customer', '=', 'customers.id')
-            ->leftJoin('users', 'penjualans.id_kasir', '=', 'users.id')
-            ->leftJoin('detail_penjualans', 'penjualans.id', '=', 'detail_penjualans.id_penjualan')
-            ->leftJoin('menus', 'menus.id', '=', 'detail_penjualans.id_menu')
-            ->leftJoin('kantins', 'kantins.id', '=', 'menus.id_kantin')
-            ->where('kantins.id', '1')
-            ->get();
+        // $data = DB::table('penjualans')
+        //     ->leftJoin('customers', 'penjualans.id_customer', '=', 'customers.id')
+        //     ->leftJoin('users', 'penjualans.id_kasir', '=', 'users.id')
+        //     ->leftJoin('detail_penjualans', 'penjualans.id', '=', 'detail_penjualans.id_penjualan')
+        //     ->leftJoin('menus', 'menus.id', '=', 'detail_penjualans.id_menu')
+        //     ->leftJoin('kantins', 'kantins.id', '=', 'menus.id_kantin')
+        //     ->where('kantins.id', '1')
+        //     ->get();
 
 
-        return view(
-            'dashboard.order.waiting',
-            [
-                'title' => 'waiting list',
-                'data' => $data
-            ]
-        );
+        // return view(
+        //     'dashboard.order.waiting',
+        //     [
+        //         'title' => 'waiting list',
+        //         'data' => $data
+        //     ]
+        // );
 
 
         // return  DB::table('penjualans')
@@ -81,7 +82,7 @@ class PenjualanController extends Controller
         //     'data' => $data
         // ]);
 
-        // return response()->json($data);
+
         // return Penjualan::join('customers', 'customers.id', '=', 'penjualans.id_customer')
         // ->join('users', 'penjualans.id_kasir', '=', 'users.id')
         // ->join('detail_penjualans', 'penjualans.id', '=', 'detail_penjualans.id_penjualans')

@@ -11,16 +11,11 @@
                         @endphp
                         <th>No</th>
                         <th>Tanggal</th>
-                        <th>Nomer Penjualan</th>
-                        <th>Pembeli</th>
-                        <th>No Telp Pembeli</th>
-                        <th>Kasir</th>
-                        <th>Model Pembayaran</th>
-                        <th>No Meja</th>
-                        <th>Kantin</th>
-                        <th>Pesanan</th>
-                        <th>Harga Satuan</th>
+                        <th>ID Penjualan</th>
+                        <th>ID Kantin</th>
+                        <th>ID Menu</th>
                         <th>Jumlah</th>
+                        <th>Harga</th>
                         <th>Diskon</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -31,16 +26,11 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{ $d->tanggal_penjualan }}</td>
-                            <td>{{ $d->nomer_penjualan }}</td>
-                            <td>{{ $d->nama }}</td>
-                            <td>{{ $d->no_telepon }}</td>
-                            <td>{{ $d->username }}</td>
-                            <td>{{ $d->model_pembayaran }}</td>
-                            <td>{{ $d->no_meja }}</td>
-                            <td>{{ $d->nama_kantin }}</td>
-                            <td>{{ $d->nama_menu }}</td>
-                            <td>{{ $d->harga }}</td>
+                            <td>{{ $d->id_penjualan }}</td>
+                            <td>{{ $d->id_kantin }}</td>
+                            <td>{{ $d->id_menu }}</td>
                             <td>{{ $d->jumlah }}</td>
+                            <td>{{ $d->harga }}</td>
                             <td>{{ $d->diskon }}</td>
                             <td>{{ $d->status }}</td>
                             <td>

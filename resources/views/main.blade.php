@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
     {{-- <link rel="stylesheet" href="{{ url(asset('public/css/style')) }}" /> --}}
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css
+    ">
 
 </head>
 
@@ -77,7 +78,7 @@
                             <ul class="side-nav-second-level text-white">
 
                                 <li>
-                                    <a href="{{ url('api/allData') }}" class="text-white">Waiting List</a>
+                                    <a href="{{ url('api/allOrder') }}" class="text-white">Waiting List</a>
                                 </li>
                                 <li>
                                     <a href="/success" class="text-white">Success</a>
@@ -331,10 +332,10 @@
                                         class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">
+                                    {{-- <span class="account-user-name">
                                         {{ auth()->user()->name }}
                                     </span>
-                                    <span class="account-position">{{ auth()->user()->email }}</span>
+                                    <span class="account-position">{{ auth()->user()->email }}</span> --}}
                                 </span>
                             </a>
                             <div
