@@ -120,13 +120,25 @@
                         </a>
                     </li>
                     <li class="side-nav-item text-red">
-                        <a class="side-nav-link fw-bold text-red" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            <i class="mdi mdi-logout me-1"></i>
-                            <span> Logout</span>
-
-                        </a>
+                    <a class="side-nav-link fw-bold text-red" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        Swal.fire({
+                            title: '<span>Apakah Ingin Logout?</span>',
+                            icon: 'question',
+                            showCancelButton: true,
+                            confirmButtonColor: '#d33',
+                            cancelButtonColor: '#3085d6',
+                            confirmButtonText: 'YA',
+                            cancelButtonText: 'BATAL',
+                            width:'400px'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                document.getElementById('logout-form').submit();
+                            }
+                        });">
+                        <i class="mdi mdi-logout me-1"></i>
+                        <span>Logout</span>
+                    </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -370,8 +382,21 @@
                                 </a>
                                 <!-- item-->
                                 <a class="dropdown-item notify-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                onclick="event.preventDefault();
+                                Swal.fire({
+                                    title: '<span>Apakah Ingin Logout?</span>',
+                                    icon: 'question',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#d33',
+                                    cancelButtonColor: '#3085d6',
+                                    confirmButtonText: 'YA',
+                                    cancelButtonText: 'BATAL',
+                                    width:'400px'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        document.getElementById('logout-form').submit();
+                                    }
+                                });">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -617,6 +642,10 @@
     <!-- end demo js-->
 
     <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- Include library SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
     @stack('script');
 
 </body>

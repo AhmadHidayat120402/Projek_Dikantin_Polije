@@ -173,6 +173,17 @@
             }
         })
 
+        // function submitForm() {
+        //     const idCustomerInput = document.getElementById("id_customer");
+
+        //     if (idCustomerInput.value === "") {
+        //         alert("ID Customer harus diisi!");
+        //         return false;
+        //     }
+
+        //     // kode lain untuk mengirim formulir
+        //     }
+
         function savePenjualan() {
             let customer_id = $('#inputid').val();
             // let cashier = $('#kantin').val();

@@ -3789,7 +3789,7 @@ fieldset:disabled .btn {
   background-color: #d54e69;
   border-color: #c84a63
 }
-
+ 
 .btn-check:focus+.btn-danger,
 .btn-danger:focus {
   color: #fff;
@@ -15717,6 +15717,16 @@ body[data-layout=topnav] .container-xxl {
   -webkit-box-shadow: 0 2px 6px 0 rgba(49, 58, 70, .5);
   box-shadow: 0 2px 6px 0 rgba(49, 58, 70, .5)
 }
+
+.btn-custom {
+  background-color: #FFA500;
+  color: #a30000;
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
 
 .badge-primary-lighten {
   color: #727cf5;
